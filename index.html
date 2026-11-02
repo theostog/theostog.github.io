@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <meta name="description" content="Το προσωπικό portfolio του Θεόδωρου (TheoDoros_St_): ενδιαφέροντα και εργασίες στον προγραμματισμό παιχνιδιών με Python και Pygame.">
+  <title>Θεόδωρος | TheoDoros_St_</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #10131c;
+      --surface: #191e2b;
+      --text: #f4f6fb;
+      --muted: #aab3c5;
+      --accent: #8b9cff;
+      --line: rgba(255,255,255,.1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 80% 0%, #252d50 0, transparent 38%), var(--bg);
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1050px, calc(100% - 40px)); margin-inline: auto; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+    .brand { text-decoration: none; font-weight: 750; letter-spacing: .02em; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+    nav a:hover, nav a:focus-visible { color: var(--text); }
+    .hero { padding: clamp(72px, 13vw, 150px) 0 100px; max-width: 760px; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
+    h1 { font-size: clamp(2.8rem, 8vw, 5.8rem); line-height: 1.04; letter-spacing: -.055em; margin: 14px 0 22px; }
+    h1 span { color: var(--accent); }
+    .intro { color: var(--muted); font-size: clamp(1.05rem, 2.4vw, 1.25rem); max-width: 650px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-block; padding: 11px 17px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; font-weight: 650; }
+    .button.primary { background: var(--accent); color: #10131c; border-color: var(--accent); }
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 12px; letter-spacing: -.035em; }
+    .section-lead { color: var(--muted); margin: 0 0 28px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .taglist { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 24px 0 0; list-style: none; }
+    .taglist li { border: 1px solid var(--line); border-radius: 999px; padding: 7px 13px; color: #dce1f0; background: rgba(255,255,255,.035); }
+    .repo-link { display: inline-block; margin-top: 17px; color: var(--accent); text-decoration: none; font-weight: 650; }
+    .repo-link:hover { text-decoration: underline; }
+    .contact { color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 650px) {
+      header { align-items: flex-start; gap: 16px; flex-direction: column; }
+      nav { gap: 17px; flex-wrap: wrap; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 70px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#home">TheoDoros_St_</a>
+      <nav aria-label="Κύρια πλοήγηση">
+        <a href="#about">Σχετικά</a>
+        <a href="#interests">Ενδιαφέροντα</a>
+        <a href="#projects">Εργασίες</a>
+        <a href="#contact">Επικοινωνία</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home" style="border:0">
+        <div class="eyebrow">Προσωπικό portfolio</div>
+        <h1>Γεια, είμαι ο<br><span>Θεόδωρος.</span></h1>
+        <p class="intro">Ασχολούμαι με τον προγραμματισμό και δημιουργώ μικρά projects, εξερευνώντας τον κόσμο των παιχνιδιών με Python και Pygame.</p>
+        <div class="actions">
+          <a class="button primary" href="#projects">Δες τις εργασίες μου</a>
+          <a class="button" href="https://github.com/theostog" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>Σχετικά με εμένα</h2>
+        <p class="section-lead">Μου αρέσει να μαθαίνω μέσα από την πράξη και να μετατρέπω ιδέες σε διαδραστικά projects.</p>
+      </section>
+
+      <section id="interests">
+        <h2>Ενδιαφέροντα</h2>
+        <p class="section-lead">Θέματα που εξερευνώ μέσα από τις εργασίες μου.</p>
+        <ul class="taglist">
+          <li>Python</li>
+          <li>Game development</li>
+          <li>Pygame</li>
+          <li>Διαδραστικά projects</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Εργασίες</h2>
+        <p class="section-lead">Μικρά projects που σχετίζονται με την ανάπτυξη παιχνιδιών.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Asteroids Game</h3>
+            <p>Παιχνίδι τύπου Asteroids με Python και Pygame, με επίκεντρο το gameplay και τον χειρισμό του παίκτη.</p>
+            <a class="repo-link" href="https://github.com/theostog/asteroids-game" target="_blank" rel="noopener noreferrer">Δες το αποθετήριο στο GitHub ↗</a>
+          </article>
+          <article class="card">
+            <h3>Asteroids_FROM_scratch</h3>
+            <p>Μια προσέγγιση από την αρχή στη δομή και τη λογική ενός παιχνιδιού Asteroids.</p>
+            <a class="repo-link" href="https://github.com/theostog/Asteroids_FROM_scratch" target="_blank" rel="noopener noreferrer">Δες το αποθετήριο στο GitHub ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Επικοινωνία</h2>
+        <p class="contact">Μπορείς να δεις το προφίλ και τις δημόσιες εργασίες μου στο <a href="https://github.com/theostog" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </section>
+    </main>
+
+    <footer>© <span id="year">2026</span> Θεόδωρος · TheoDoros_St_</footer>
+  </div>
+</body>
+</html>
