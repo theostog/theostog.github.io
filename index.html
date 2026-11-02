@@ -8,26 +8,29 @@
   <title>Θεόδωρος — TheoDoros_St_ | Portfolio</title>
   <style>
     :root {
-      color-scheme: dark;
+      /* Explicitly authored dark palette helps Edge preserve the intended theme. */
+      color-scheme: only dark;
       --bg: #0b1020;
-      --surface: rgba(19, 27, 49, .78);
+      --surface: #131b31;
       --surface-hover: #192442;
-      --text: #f4f6ff;
-      --muted: #a6b0ca;
-      --accent: #a9a5ff;
-      --accent-2: #78e2d0;
-      --line: rgba(210, 220, 255, .13);
+      --text: #f7f8ff;
+      --muted: #bdc7dc;
+      --accent: #c1bdff;
+      --accent-2: #88f0de;
+      --line: #39425b;
       --max-width: 1080px;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    html { min-height: 100%; background: var(--bg); scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
       min-width: 320px;
+      min-height: 100vh;
       margin: 0;
       color: var(--text);
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse at 82% 3%, #202449 0, transparent 34%),
+                        radial-gradient(ellipse at 5% 38%, #102b38 0, transparent 30%);
       font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(ellipse at 82% 3%, rgba(80, 83, 171, .26), transparent 34%),
-                  radial-gradient(ellipse at 5% 38%, rgba(42, 127, 139, .12), transparent 30%), var(--bg);
     }
     a { color: inherit; }
     a:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 4px; border-radius: 4px; }
@@ -36,7 +39,7 @@
     .container { width: min(var(--max-width), calc(100% - 44px)); margin-inline: auto; }
     .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; }
     .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 750; letter-spacing: .02em; }
-    .brand-mark { display: grid; width: 35px; height: 35px; place-items: center; border: 1px solid rgba(169,165,255,.5); border-radius: 11px; color: var(--accent); background: rgba(169,165,255,.1); }
+    .brand-mark { display: grid; width: 35px; height: 35px; place-items: center; border: 1px solid #7772c4; border-radius: 11px; color: var(--accent); background: #222442; }
     nav { display: flex; flex-wrap: wrap; gap: 25px; }
     nav a { color: var(--muted); font-size: .94rem; text-decoration: none; transition: color .2s ease; }
     nav a:hover { color: var(--text); }
@@ -48,14 +51,14 @@
     .hero-copy { max-width: 630px; color: var(--muted); font-size: clamp(1.05rem, 2.2vw, 1.2rem); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
     .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 10px 17px; border: 1px solid var(--line); border-radius: 11px; text-decoration: none; font-size: .94rem; font-weight: 700; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
-    .button:hover { transform: translateY(-2px); border-color: rgba(169,165,255,.55); }
+    .button:hover { transform: translateY(-2px); border-color: var(--accent); }
     .button-primary { color: #111329; background: var(--accent); border-color: var(--accent); }
-    .button-primary:hover { background: #c0bdff; }
+    .button-primary:hover { background: #d3d0ff; }
     .orbit-art { position: relative; display: grid; width: min(100%, 340px); aspect-ratio: 1; place-items: center; justify-self: center; }
-    .orbit-art::before, .orbit-art::after { position: absolute; inset: 9%; border: 1px solid rgba(169,165,255,.25); border-radius: 50%; content: ""; transform: rotate(-28deg) scaleY(.55); }
-    .orbit-art::after { inset: 1%; transform: rotate(38deg) scaleY(.72); border-color: rgba(120,226,208,.2); }
-    .planet { display: grid; width: 48%; aspect-ratio: 1; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 34% 50% 43% 48%; background: radial-gradient(circle at 32% 28%, #e5c4ff, #8b83e9 42%, #42477d 77%); box-shadow: 0 0 75px rgba(139,131,233,.28), inset -16px -18px 30px rgba(16,19,45,.4); transform: rotate(-18deg); }
-    .planet svg { width: 58%; color: #171a39; opacity: .8; }
+    .orbit-art::before, .orbit-art::after { position: absolute; inset: 9%; border: 1px solid #595b89; border-radius: 50%; content: ""; transform: rotate(-28deg) scaleY(.55); }
+    .orbit-art::after { inset: 1%; transform: rotate(38deg) scaleY(.72); border-color: #376c6e; }
+    .planet { display: grid; width: 48%; aspect-ratio: 1; place-items: center; border: 1px solid #c1bdff; border-radius: 34% 50% 43% 48%; background: radial-gradient(circle at 32% 28%, #e5c4ff, #8b83e9 42%, #42477d 77%); box-shadow: 0 0 75px #34335d, inset -16px -18px 30px #222442; transform: rotate(-18deg); }
+    .planet svg { width: 58%; color: #171a39; opacity: .9; }
     .spark { position: absolute; color: var(--accent-2); font-size: 1.1rem; }
     .spark-one { top: 17%; right: 16%; }.spark-two { bottom: 18%; left: 13%; color: var(--accent); font-size: .75rem; }
     section.content-section { padding: 73px 0; border-top: 1px solid var(--line); }
@@ -65,23 +68,23 @@
     .section-lead { margin: 0; color: var(--muted); }
     .about-panel { display: grid; grid-template-columns: 1.1fr .9fr; gap: 25px; align-items: center; }
     .about-text { color: var(--muted); }
-    .about-note { padding: 22px 24px; border-left: 2px solid var(--accent); border-radius: 0 12px 12px 0; color: #d7dcf1; background: rgba(169,165,255,.07); }
+    .about-note { padding: 22px 24px; border-left: 2px solid var(--accent); border-radius: 0 12px 12px 0; color: var(--text); background: #191d39; }
     .tag-list { display: flex; flex-wrap: wrap; gap: 11px; padding: 0; margin: 25px 0 0; list-style: none; }
-    .tag-list li { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; color: #dce1f3; background: rgba(255,255,255,.035); }
+    .tag-list li { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); background: #151c30; }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .project-card { position: relative; display: flex; min-height: 260px; flex-direction: column; overflow: hidden; padding: 25px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(145deg, rgba(28,38,69,.9), var(--surface)); transition: transform .2s ease, border-color .2s ease, background .2s ease; }
-    .project-card:hover { transform: translateY(-4px); border-color: rgba(169,165,255,.42); background: linear-gradient(145deg, var(--surface-hover), var(--surface)); }
+    .project-card { position: relative; display: flex; min-height: 260px; flex-direction: column; overflow: hidden; padding: 25px; border: 1px solid var(--line); border-radius: 17px; background: var(--surface); transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .project-card:hover { transform: translateY(-4px); border-color: #7772c4; background: var(--surface-hover); }
     .project-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-    .project-icon { display: grid; width: 43px; height: 43px; place-items: center; border-radius: 13px; color: var(--accent); background: rgba(169,165,255,.12); font-size: 1.25rem; }
+    .project-icon { display: grid; width: 43px; height: 43px; place-items: center; border-radius: 13px; color: var(--accent); background: #222442; font-size: 1.25rem; }
     .project-type { color: var(--muted); font-size: .78rem; }
     .project-card h3 { margin: 0 0 8px; font-size: 1.22rem; letter-spacing: -.02em; }
     .project-card p { margin: 0; color: var(--muted); }
     .project-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-    .project-meta span { padding: 3px 9px; border-radius: 999px; color: #cbd1e7; background: rgba(255,255,255,.06); font-size: .78rem; }
+    .project-meta span { padding: 3px 9px; border-radius: 999px; color: var(--text); background: #293149; font-size: .78rem; }
     .project-link { display: inline-flex; align-items: center; gap: 7px; align-self: flex-start; margin-top: auto; padding-top: 20px; color: var(--accent); text-decoration: none; font-weight: 700; }
-    .project-link:hover { color: #c8c5ff; }
+    .project-link:hover { color: #e1dfff; }
     .private-note { color: var(--muted); font-size: .86rem; margin-top: 18px; }
-    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(120deg, rgba(169,165,255,.1), rgba(120,226,208,.055)); }
+    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: #151c30; }
     .contact-panel p { margin: 0; color: var(--muted); }
     footer { display: flex; justify-content: space-between; gap: 15px; padding: 24px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
     footer a { color: var(--muted); text-decoration: none; }
@@ -102,6 +105,15 @@
       footer { flex-direction: column; }
       .orbit-art { width: min(55vw, 220px); }
     }
+    @media (forced-colors: active) {
+      :root { color-scheme: light; }
+      body, .project-card, .contact-panel, .tag-list li, .about-note { color: CanvasText; background: Canvas; }
+      .brand-mark, .project-icon, .project-meta span { color: LinkText; background: Canvas; border: 1px solid CanvasText; }
+      .button-primary { color: ButtonText; background: ButtonFace; border-color: ButtonText; }
+      .project-link, .section-kicker, .eyebrow { color: LinkText; }
+      .orbit-art, .planet { display: none; }
+      .line, section.content-section, footer { border-color: CanvasText; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
@@ -111,100 +123,40 @@
   <a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
   <div class="container">
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="TheoDoros_St_ — αρχική">
-        <span class="brand-mark" aria-hidden="true">T</span>
-        <span>TheoDoros_St_</span>
-      </a>
-      <nav aria-label="Κύρια πλοήγηση">
-        <a href="#about">Σχετικά</a>
-        <a href="#interests">Ενδιαφέροντα</a>
-        <a href="#projects">Εργασίες</a>
-        <a href="#contact">Επικοινωνία</a>
-      </nav>
+      <a class="brand" href="#home" aria-label="TheoDoros_St_ — αρχική"><span class="brand-mark" aria-hidden="true">T</span><span>TheoDoros_St_</span></a>
+      <nav aria-label="Κύρια πλοήγηση"><a href="#about">Σχετικά</a><a href="#interests">Ενδιαφέροντα</a><a href="#projects">Εργασίες</a><a href="#contact">Επικοινωνία</a></nav>
     </header>
-
     <main id="main">
       <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="hero-content">
           <div class="eyebrow">Portfolio · Προγραμματισμός</div>
           <h1 id="hero-title">Γεια, είμαι ο<br><span>Θεόδωρος.</span></h1>
           <p class="hero-copy">Μου αρέσει να μαθαίνω δημιουργώντας. Εξερευνώ τον προγραμματισμό παιχνιδιών με Python και Pygame, ένα project τη φορά.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Ανακάλυψε τις εργασίες <span aria-hidden="true">↓</span></a>
-            <a class="button" href="https://github.com/theostog" target="_blank" rel="noopener noreferrer">Το GitHub μου <span aria-hidden="true">↗</span></a>
-          </div>
+          <div class="hero-actions"><a class="button button-primary" href="#projects">Ανακάλυψε τις εργασίες <span aria-hidden="true">↓</span></a><a class="button" href="https://github.com/theostog" target="_blank" rel="noopener noreferrer">Το GitHub μου <span aria-hidden="true">↗</span></a></div>
         </div>
-        <div class="orbit-art" aria-hidden="true">
-          <span class="spark spark-one">✦</span><span class="spark spark-two">✦</span>
-          <div class="planet">
-            <svg viewBox="0 0 100 100" fill="none"><path d="M22 56c10-18 25-26 48-22l13 8-8 9-12-2-9 13-16-2-9 8-11-4 4-8Z" fill="currentColor"/><circle cx="70" cy="35" r="4" fill="currentColor"/><path d="m30 30 4 5m-2-7-1 8m-8 28 5-2" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-          </div>
-        </div>
+        <div class="orbit-art" aria-hidden="true"><span class="spark spark-one">✦</span><span class="spark spark-two">✦</span><div class="planet"><svg viewBox="0 0 100 100" fill="none"><path d="M22 56c10-18 25-26 48-22l13 8-8 9-12-2-9 13-16-2-9 8-11-4 4-8Z" fill="currentColor"/><circle cx="70" cy="35" r="4" fill="currentColor"/><path d="m30 30 4 5m-2-7-1 8m-8 28 5-2" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div></div>
       </section>
-
       <section class="content-section" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
-          <div class="section-kicker">Λίγα λόγια</div>
-          <h2 id="about-title">Μαθαίνω φτιάχνοντας.</h2>
-        </div>
-        <div class="about-panel">
-          <p class="about-text">Μέσα από τα projects μου δοκιμάζω ιδέες, εξασκούμαι στη λογική του προγραμματισμού και ανακαλύπτω πώς μια ιδέα μπορεί να γίνει κάτι διαδραστικό.</p>
-          <div class="about-note">Κάθε project είναι μια ευκαιρία να πειραματιστώ, να λύσω προβλήματα και να μάθω κάτι καινούριο.</div>
-        </div>
+        <div class="section-heading"><div class="section-kicker">Λίγα λόγια</div><h2 id="about-title">Μαθαίνω φτιάχνοντας.</h2></div>
+        <div class="about-panel"><p class="about-text">Μέσα από τα projects μου δοκιμάζω ιδέες, εξασκούμαι στη λογική του προγραμματισμού και ανακαλύπτω πώς μια ιδέα μπορεί να γίνει κάτι διαδραστικό.</p><div class="about-note">Κάθε project είναι μια ευκαιρία να πειραματιστώ, να λύσω προβλήματα και να μάθω κάτι καινούριο.</div></div>
       </section>
-
       <section class="content-section" id="interests" aria-labelledby="interests-title">
-        <div class="section-heading">
-          <div class="section-kicker">Τι εξερευνώ</div>
-          <h2 id="interests-title">Ενδιαφέροντα</h2>
-          <p class="section-lead">Θέματα που εμφανίζονται στις εργασίες μου.</p>
-        </div>
-        <ul class="tag-list">
-          <li>Python</li><li>Game development</li><li>Pygame</li><li>Διαδραστικά projects</li>
-        </ul>
+        <div class="section-heading"><div class="section-kicker">Τι εξερευνώ</div><h2 id="interests-title">Ενδιαφέροντα</h2><p class="section-lead">Θέματα που εμφανίζονται στις εργασίες μου.</p></div>
+        <ul class="tag-list"><li>Python</li><li>Game development</li><li>Pygame</li><li>Διαδραστικά projects</li></ul>
       </section>
-
       <section class="content-section" id="projects" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <div class="section-kicker">Μερικά πράγματα που έφτιαξα</div>
-          <h2 id="projects-title">Εργασίες</h2>
-          <p class="section-lead">Projects με θέμα το Asteroids και την ανάπτυξη παιχνιδιών.</p>
-        </div>
+        <div class="section-heading"><div class="section-kicker">Μερικά πράγματα που έφτιαξα</div><h2 id="projects-title">Εργασίες</h2><p class="section-lead">Projects με θέμα το Asteroids και την ανάπτυξη παιχνιδιών.</p></div>
         <div class="project-grid">
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon" aria-hidden="true">✦</span><span class="project-type">Game project</span></div>
-            <h3>Asteroids Game</h3>
-            <p>Παιχνίδι τύπου Asteroids με Python και Pygame, με επίκεντρο το gameplay και τον χειρισμό του παίκτη.</p>
-            <div class="project-meta"><span>Python</span><span>Pygame</span></div>
-            <a class="project-link" href="https://github.com/theostog/asteroids-game" target="_blank" rel="noopener noreferrer">Αποθετήριο στο GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon" aria-hidden="true">⌘</span><span class="project-type">Πειραματισμός</span></div>
-            <h3>Asteroids_FROM_scratch</h3>
-            <p>Μια προσέγγιση από την αρχή στη δομή και τη λογική ενός παιχνιδιού Asteroids.</p>
-            <div class="project-meta"><span>Python</span><span>Game development</span></div>
-            <a class="project-link" href="https://github.com/theostog/Asteroids_FROM_scratch" target="_blank" rel="noopener noreferrer">Αποθετήριο στο GitHub <span aria-hidden="true">↗</span></a>
-          </article>
+          <article class="project-card"><div class="project-top"><span class="project-icon" aria-hidden="true">✦</span><span class="project-type">Game project</span></div><h3>Asteroids Game</h3><p>Παιχνίδι τύπου Asteroids με Python και Pygame, με επίκεντρο το gameplay και τον χειρισμό του παίκτη.</p><div class="project-meta"><span>Python</span><span>Pygame</span></div><a class="project-link" href="https://github.com/theostog/asteroids-game" target="_blank" rel="noopener noreferrer">Αποθετήριο στο GitHub <span aria-hidden="true">↗</span></a></article>
+          <article class="project-card"><div class="project-top"><span class="project-icon" aria-hidden="true">⌘</span><span class="project-type">Πειραματισμός</span></div><h3>Asteroids_FROM_scratch</h3><p>Μια προσέγγιση από την αρχή στη δομή και τη λογική ενός παιχνιδιού Asteroids.</p><div class="project-meta"><span>Python</span><span>Game development</span></div><a class="project-link" href="https://github.com/theostog/Asteroids_FROM_scratch" target="_blank" rel="noopener noreferrer">Αποθετήριο στο GitHub <span aria-hidden="true">↗</span></a></article>
         </div>
         <p class="private-note">Σημείωση: τα αποθετήρια των projects είναι ιδιωτικά· η πρόσβαση στον κώδικα απαιτεί δικαιώματα στο GitHub.</p>
       </section>
-
       <section class="content-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-panel">
-          <div>
-            <div class="section-kicker">Ας συνδεθούμε</div>
-            <h2 id="contact-title">Βρες με στο GitHub.</h2>
-            <p>Δες το προφίλ μου και τις δημόσιες εργασίες μου.</p>
-          </div>
-          <a class="button button-primary" href="https://github.com/theostog" target="_blank" rel="noopener noreferrer">Άνοιγμα προφίλ <span aria-hidden="true">↗</span></a>
-        </div>
+        <div class="contact-panel"><div><div class="section-kicker">Ας συνδεθούμε</div><h2 id="contact-title">Βρες με στο GitHub.</h2><p>Δες το προφίλ μου και τις δημόσιες εργασίες μου.</p></div><a class="button button-primary" href="https://github.com/theostog" target="_blank" rel="noopener noreferrer">Άνοιγμα προφίλ <span aria-hidden="true">↗</span></a></div>
       </section>
     </main>
-
-    <footer>
-      <span>© 2026 Θεόδωρος · TheoDoros_St_</span>
-      <a href="#home">Πίσω στην κορυφή ↑</a>
-    </footer>
+    <footer><span>© 2026 Θεόδωρος · TheoDoros_St_</span><a href="#home">Πίσω στην κορυφή ↑</a></footer>
   </div>
 </body>
 </html>
